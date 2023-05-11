@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User profile</title>
+</head>
+<body>
+  </div>
+  <div style='text-align:right'>
+    <p><a href='/logout'>Logout</a></p>
+    <p><a href='/set_api'>Set API Key</a></p>
+  </div>
+  <div style='text-align:left'>
+   {% if message %}
+  <h2>Hi {{message}}</h2>
+  {% endif %}
+
+  <p style='color:magenta' >Select Any of the below options</p>
+  <ol>
+    <li><a href="/sentiment">Sentiment Analysis</a></li>
+    <li><a href="/ner">Named Entity Recognition</a></li>
+    <li><a href="/abuse_detection">Abuse Detection</a></li>
+    <li><a href="/similarity">Similarity Score</a></li>
+  </ol><br>
+
+  <p style='color:red'>**Do not Proceed before Setting your API Key**</p>
+</body>
+</html>

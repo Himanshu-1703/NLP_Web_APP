@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abuse Detection</title>
+</head>
+<body>
+  <h2>Abuse Detection</h2><br>
+  {% if error %}
+    <p style='color:red'>{{error}}</p><br>
+  {% endif %}
+
+  <form action='/perform_abuse' method='post'>
+  <label>Text</label><br>
+  <textarea rows=20 cols=50 name='text'></textarea><br><br>
+  <input type="submit" value='Do Detection'>
+  </form>
+
+  {% for out in result %}
+    <p style='color:green'>{{out}}</p>
+  {% endfor %}
+</body>
+</html>

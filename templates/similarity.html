@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Similarity Score</title>
+</head>
+<body>
+  <h2>Similarity Score</h2><br>
+  {% if error %}
+    <p style='color:red'>{{error}}</p><br>
+  {% endif %}
+
+  <form action='/perform_similarity' method='post'>
+  <label>Text_1</label><br>
+  <textarea rows=10 cols=50 name='text1'></textarea><br><br>
+    <label>Text_2</label><br>
+  <textarea rows=10 cols=50 name='text2'></textarea><br><br>
+  <input type="submit" value='Compare Text'>
+  </form>
+
+  {% for out in result %}
+    <p style='color:green'>{{out}}</p>
+  {% endfor %}
+</body>
+</html>
